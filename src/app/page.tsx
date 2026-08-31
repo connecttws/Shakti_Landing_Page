@@ -22,24 +22,24 @@ export default function ShaktiLandingPage() {
         <div className="absolute top-40 right-10 w-96 h-96 bg-accent-sage/20 rounded-full blur-3xl -z-10"></div>
         
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+          <div className="space-y-4 md:space-y-5 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary-navy/5 text-primary-navy font-medium text-xs md:text-sm">
               <ShieldCheck className="w-4 h-4" />
               Private & Confidential Support
             </div>
-            <h1 className="heading-primary text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight">
+            <h1 className="heading-primary text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight md:leading-tight">
               Working Professionals Facing <br className="hidden lg:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-navy to-accent-sage">Intimacy Issues?</span>
             </h1>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Get personalised support for <strong className="text-primary-navy font-bold">sexual wellness, intimacy, anxiety, and relationship</strong> concerns in a safe, non-judgmental space.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-              <a href="#consultation" className="btn-primary text-base md:text-lg group w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 pt-1 md:pt-2 justify-center lg:justify-start items-center lg:items-start">
+              <a href="#consultation" className="btn-primary px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base group w-fit border border-white/20 shadow-md">
                 Book Your Private Consultation
-                <PlayCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                <PlayCircle className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 md:gap-6 text-xs md:text-sm text-slate-500 font-medium pt-4 md:pt-6">
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 md:gap-6 text-xs md:text-sm text-slate-500 font-medium pt-2 md:pt-3">
               <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> 1000+ Patients</span>
               <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Online/Offline</span>
             </div>
@@ -89,12 +89,18 @@ export default function ShaktiLandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="heading-primary text-3xl md:text-4xl font-bold mb-4">Concerns We Can Help You With</h2>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto mt-6 md:mt-8">
-              {["Performance Anxiety", "Sexual Confidence", "Premature Ejaculation", "Erectile Difficulties", "Vaginismus & Pelvic Pain", "Intimacy & Desire Concerns"].map((concern, idx) => (
-                <span key={idx} className="px-4 py-2 md:px-6 md:py-3 bg-white rounded-full shadow-sm text-primary-navy font-medium border border-gray-100 text-sm md:text-base">
-                  {concern}
-                </span>
-              ))}
+            <div className="relative flex overflow-hidden w-full max-w-5xl mx-auto mt-6 md:mt-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <div className="flex w-max animate-marquee gap-3 md:gap-4 hover:[animation-play-state:paused] py-2">
+                {[...Array(2)].map((_, i) => (
+                  <React.Fragment key={i}>
+                    {["Performance Anxiety", "Sexual Confidence", "Premature Ejaculation", "Erectile Difficulties", "Vaginismus & Pelvic Pain", "Intimacy & Desire Concerns"].map((concern, idx) => (
+                      <span key={`${i}-${idx}`} className="shrink-0 px-5 py-3 md:px-6 md:py-3 bg-white rounded-full shadow-sm text-primary-navy font-medium border-2 border-gray-200 md:border md:border-gray-100 text-base">
+                        {concern}
+                      </span>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -176,17 +182,17 @@ export default function ShaktiLandingPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space.",
-              "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions and everyday life.",
-              "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence.",
-              "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better.",
-              "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.",
-              "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through."
-            ].map((quote, idx) => (
+              { quote: "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space.", name: "Rahul M." },
+              { quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions and everyday life.", name: "Ankit S." },
+              { quote: "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence.", name: "Vikram K." },
+              { quote: "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better.", name: "Siddharth R." },
+              { quote: "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.", name: "Priya T." },
+              { quote: "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through.", name: "Neha V." }
+            ].map((testimonial, idx) => (
               <div key={idx} className="glass-card p-6 md:p-8 rounded-2xl relative">
                 <div className="text-4xl md:text-6xl text-primary-navy/10 absolute top-4 right-6 font-serif">"</div>
-                <p className="text-sm md:text-base text-slate-700 relative z-10 italic mb-4 md:mb-6 leading-relaxed">"{quote}"</p>
-                <div className="font-bold text-sm md:text-base text-primary-navy font-outfit">— Client</div>
+                <p className="text-sm md:text-base text-slate-700 relative z-10 italic mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <div className="font-bold text-sm md:text-base text-primary-navy font-outfit">— {testimonial.name}</div>
               </div>
             ))}
           </div>
