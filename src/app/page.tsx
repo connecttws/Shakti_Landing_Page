@@ -21,8 +21,10 @@ export default function ShaktiLandingPage() {
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent-coral/20 rounded-full blur-3xl -z-10"></div>
         <div className="absolute top-40 right-10 w-96 h-96 bg-accent-sage/20 rounded-full blur-3xl -z-10"></div>
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-4 md:space-y-5 text-center lg:text-left">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-4 gap-x-8 md:gap-x-12 items-center">
+          
+          {/* TEXT BLOCK */}
+          <div className="order-1 lg:col-start-1 lg:row-start-1 space-y-4 md:space-y-5 text-center lg:text-left self-end">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary-navy/5 text-primary-navy font-medium text-xs md:text-sm">
               <ShieldCheck className="w-4 h-4" />
               Private & Confidential Support
@@ -33,7 +35,23 @@ export default function ShaktiLandingPage() {
             <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Get personalised support for <strong className="text-primary-navy font-bold">sexual wellness, intimacy, anxiety, and relationship</strong> concerns in a safe, non-judgmental space.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-1 md:pt-2 justify-center lg:justify-start items-center lg:items-start">
+          </div>
+          
+          {/* VSL BLOCK */}
+          <div className="order-2 lg:col-start-2 lg:row-span-2 relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-video bg-gray-900 group border-4 border-white w-full max-w-xl mx-auto lg:max-w-none">
+            {/* VSL Video Placeholder */}
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 opacity-60"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+              <PlayCircle className="w-16 h-16 md:w-20 md:h-20 text-white/90 group-hover:scale-110 transition-transform cursor-pointer mb-2 md:mb-4 drop-shadow-md" />
+              <div className="text-white/90 text-center text-sm md:text-base font-medium drop-shadow-md">
+                Click to watch Dr. Dipali explain her approach
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA BLOCK */}
+          <div className="order-3 lg:col-start-1 lg:row-start-2 self-start">
+            <div className="flex flex-col sm:flex-row gap-4 pt-1 justify-center lg:justify-start items-center lg:items-start">
               <a href="#consultation" className="btn-primary px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base group w-fit border border-white/20 shadow-md">
                 Book Your Private Consultation
                 <PlayCircle className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
@@ -44,17 +62,7 @@ export default function ShaktiLandingPage() {
               <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Online/Offline</span>
             </div>
           </div>
-          
-          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-video bg-gray-900 group border-4 border-white w-full max-w-xl mx-auto lg:max-w-none">
-            {/* VSL Video Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 opacity-60"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-              <PlayCircle className="w-16 h-16 md:w-20 md:h-20 text-white/90 group-hover:scale-110 transition-transform cursor-pointer mb-2 md:mb-4 drop-shadow-md" />
-              <div className="text-white/90 text-center text-sm md:text-base font-medium drop-shadow-md">
-                Click to watch Dr. Dipali explain her approach
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
