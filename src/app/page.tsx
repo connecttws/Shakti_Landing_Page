@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlayCircle, ShieldCheck, CheckCircle2, ChevronDown, Activity, Heart, Brain, Users, Sparkles, MessageCircleHeart } from 'lucide-react';
+import { PlayCircle, ShieldCheck, CheckCircle2, ChevronDown, Activity, Heart, Brain, Users, Sparkles, MessageCircleHeart, HeartPulse, Accessibility, Stethoscope } from 'lucide-react';
 
 export default function ShaktiLandingPage() {
   return (
@@ -33,7 +33,7 @@ export default function ShaktiLandingPage() {
               Working Professionals Facing <br className="hidden lg:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-navy to-accent-sage">Intimacy Issues?</span>
             </h1>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Get personalised support for <strong className="text-primary-navy font-bold">sexual wellness, intimacy, anxiety, and relationship</strong> concerns in a safe, non-judgmental space.
+              Get Personalised Support for <strong className="text-primary-navy font-bold">Se.x.ual Wellness, Intimacy, Anxiety & Relationship</strong> Concerns
             </p>
           </div>
           
@@ -57,10 +57,16 @@ export default function ShaktiLandingPage() {
                 <PlayCircle className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 md:gap-6 text-xs md:text-sm text-slate-500 font-medium pt-2 md:pt-3">
-              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> 1000+ Patients</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Online/Offline</span>
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3 md:gap-4 text-xs md:text-sm text-slate-600 font-medium pt-4 max-w-xl mx-auto lg:mx-0">
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Private & Confidential Consultation</span>
+              <span className="hidden sm:inline text-gray-300">|</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Individualised Support</span>
+              <span className="hidden sm:inline text-gray-300">|</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-accent-sage" /> Online/Offline Sessions</span>
             </div>
+            <p className="mt-6 md:mt-8 text-sm md:text-base text-slate-700 leading-relaxed max-w-xl mx-auto lg:mx-0 text-center lg:text-left bg-primary-navy/5 p-4 rounded-xl border border-primary-navy/10 font-medium">
+              With 1000+ patients supported, Dr. Dipali helps working professionals manage intimacy concerns affected by stress, anxiety, and demanding work routines.
+            </p>
           </div>
 
         </div>
@@ -71,7 +77,7 @@ export default function ShaktiLandingPage() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="font-outfit text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
-            "I Look Beyond the Sexual Concern — <br className="hidden sm:block"/>
+            "I Look Beyond the Se.x.ual Concern — <br className="hidden sm:block"/>
             <span className="text-accent-coral">I Look at What Affects Your Intimacy"</span>
           </h2>
           <p className="text-base md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-16">
@@ -88,6 +94,12 @@ export default function ShaktiLandingPage() {
             <span>Adapt</span>
             <span className="hidden sm:inline">→</span>
             <span>Reconnect</span>
+          </div>
+
+          <div className="mt-12 md:mt-16 text-center">
+            <a href="#consultation" className="btn-primary px-8 py-3.5 md:px-10 md:py-4 text-base md:text-lg w-full sm:w-auto inline-block border border-white/20 shadow-xl hover:shadow-2xl">
+              BOOK YOUR PRIVATE CONSULTANCY
+            </a>
           </div>
         </div>
       </section>
@@ -112,14 +124,25 @@ export default function ShaktiLandingPage() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+          <div className="text-center mb-12 max-w-4xl mx-auto">
+            <h2 className="heading-primary text-3xl md:text-4xl font-bold mb-6">How We Can Support You</h2>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+              Sexual wellness is connected to much more than physical intimacy. Your emotions, confidence, relationship, health, stress and everyday life can all play a role.<br className="hidden md:block"/>
+              We help individuals and couples understand these connections and work through concerns related to sexual wellness and intimacy through an Occupational Therapy approach.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-10">
             {[
               { icon: <Heart className="text-accent-coral" />, title: "Sexual Wellness Concerns", desc: "Understand your sexual wellness concerns in a private, comfortable and non-judgmental environment." },
-              { icon: <MessageCircleHeart className="text-accent-sage" />, title: "Intimacy & Relationship", desc: "Work through communication difficulties, emotional distance, and differences in expectations." },
+              { icon: <MessageCircleHeart className="text-accent-sage" />, title: "Intimacy & Relationship Concerns", desc: "Work through communication difficulties, emotional distance, differences in expectations and challenges in your intimate relationship." },
               { icon: <Brain className="text-primary-teal" />, title: "Sexual Performance Anxiety", desc: "Understand how anxiety, overthinking, pressure and self-confidence may be affecting your intimate experience." },
-              { icon: <Sparkles className="text-amber-500" />, title: "Body Confidence", desc: "Develop greater awareness, comfort and confidence in your body and intimate self." },
-              { icon: <Activity className="text-rose-500" />, title: "Stress & Anxiety", desc: "Explore how everyday stress, work pressure, and emotional exhaustion may be affecting your sexual well-being." },
-              { icon: <Users className="text-indigo-500" />, title: "Partner Education", desc: "Help partners understand each other's needs, concerns and experiences to build better connection." },
+              { icon: <Sparkles className="text-amber-500" />, title: "Body Confidence & Sexual Self-Esteem", desc: "Develop greater awareness, comfort and confidence in your body and intimate self." },
+              { icon: <Activity className="text-rose-500" />, title: "Stress & Anxiety Related to Intimacy", desc: "Explore how everyday stress, work pressure, anxiety and emotional exhaustion may be affecting your sexual well-being." },
+              { icon: <Stethoscope className="text-emerald-500" />, title: "Sexual Rehabilitation", desc: "Get support when illness, injury, surgery or changes in physical functioning have affected your intimacy or sexual well-being." },
+              { icon: <Accessibility className="text-blue-500" />, title: "Sexuality & Disability Support", desc: "Explore sexuality, intimacy and practical strategies based on your individual abilities, needs and circumstances." },
+              { icon: <HeartPulse className="text-red-500" />, title: "Chronic Illness & Intimacy", desc: "Understand and adapt to changes in intimacy, confidence, energy and relationships while living with a chronic condition." },
+              { icon: <Users className="text-indigo-500" />, title: "Partner Education & Communication", desc: "Help partners understand each other's needs, concerns and experiences to build better communication and connection." },
             ].map((feature, idx) => (
               <div key={idx} className="glass-card p-6 md:p-8 rounded-2xl group cursor-default">
                 <div className="w-12 h-12 md:w-14 md:h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
@@ -190,12 +213,12 @@ export default function ShaktiLandingPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              { quote: "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space.", name: "Rahul M." },
-              { quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions and everyday life.", name: "Ankit S." },
-              { quote: "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence.", name: "Vikram K." },
-              { quote: "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better.", name: "Siddharth R." },
-              { quote: "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.", name: "Priya T." },
-              { quote: "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through.", name: "Neha V." }
+              { quote: "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space to understand my concerns without feeling judged.", name: "{Clients Name}" },
+              { quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions, confidence and everyday life.", name: "{Clients Name}" },
+              { quote: "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence and intimacy, and I got practical guidance that I could relate to.", name: "{Clients Name}" },
+              { quote: "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better, and my intimate life has improved.", name: "{Clients Name}" },
+              { quote: "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.", name: "{Clients Name}" },
+              { quote: "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through.", name: "{Clients Name}" }
             ].map((testimonial, idx) => (
               <div key={idx} className="glass-card p-6 md:p-8 rounded-2xl relative">
                 <div className="text-4xl md:text-6xl text-primary-navy/10 absolute top-4 right-6 font-serif">"</div>
@@ -203,6 +226,12 @@ export default function ShaktiLandingPage() {
                 <div className="font-bold text-sm md:text-base text-primary-navy font-outfit">— {testimonial.name}</div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 md:mt-16 text-center">
+            <a href="#consultation" className="btn-primary px-8 py-3.5 md:px-10 md:py-4 text-base md:text-lg w-full sm:w-auto inline-block border border-white/20 shadow-xl hover:shadow-2xl">
+              BOOK YOUR PRIVATE CONSULTANCY
+            </a>
           </div>
         </div>
       </section>
