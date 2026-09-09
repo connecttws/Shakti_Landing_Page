@@ -169,14 +169,15 @@ export default function ShaktiLandingPage() {
       <section className="py-12 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-y border-gray-100">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
-            <div className="aspect-[4/5] bg-gray-200 rounded-2xl md:rounded-3xl overflow-hidden relative shadow-xl w-full max-w-sm mx-auto lg:max-w-none">
-              {/* Image Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-navy/20 to-transparent z-10"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium text-sm md:text-base">
-                ( Dr. Dipali Picture Here )
-              </div>
+            <div className="aspect-[4/5] bg-gray-100 rounded-2xl md:rounded-3xl overflow-hidden relative shadow-2xl w-full max-w-sm mx-auto lg:max-w-none border-4 border-white">
+              <img
+                src="/dipali.png"
+                alt="Dr. Dipali Ganesh Thakare"
+                className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 via-transparent to-transparent pointer-events-none" />
             </div>
-            <div className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-2xl shadow-xl glass-card hidden sm:block">
+            <div className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-xl border border-gray-100 hidden sm:block z-10">
               <div className="text-2xl md:text-4xl font-bold text-primary-navy mb-1 font-outfit">1000+</div>
               <div className="text-xs md:text-sm text-slate-500 font-medium">Patients Supported</div>
             </div>
