@@ -1,5 +1,6 @@
 import React from 'react';
 import { PlayCircle, ShieldCheck, CheckCircle2, ChevronDown, Activity, Heart, Brain, Users, Sparkles, MessageCircleHeart, HeartPulse, Accessibility, Stethoscope } from 'lucide-react';
+import BookingFormSection from '@/components/BookingFormSection';
 
 export default function ShaktiLandingPage() {
   return (
@@ -70,6 +71,9 @@ export default function ShaktiLandingPage() {
 
         </div>
       </section>
+
+      {/* Consultation Booking Form Section */}
+      <BookingFormSection />
 
       {/* The Approach / Agitation */}
       <section className="py-12 md:py-24 bg-primary-navy text-white relative overflow-hidden">
@@ -262,15 +266,15 @@ export default function ShaktiLandingPage() {
       </section>
 
       {/* Footer / Final CTA */}
-      <footer className="bg-primary-navy pt-12 md:pt-24 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 text-center" id="consultation">
+      <footer className="bg-primary-navy pt-12 md:pt-24 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 text-center" id="footer">
         <div className="max-w-4xl mx-auto text-white">
           <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Ready to Reclaim Your Confidence?</h2>
           <p className="text-base md:text-xl text-blue-100 mb-8 md:mb-10 max-w-2xl mx-auto">
             Take the first step towards better intimacy, sexual wellness, and connection today. Private, confidential, and individualised support.
           </p>
-          <button className="bg-accent-coral text-primary-navy font-bold text-base md:text-lg px-8 py-4 md:px-10 md:py-5 rounded-full hover:bg-white transition-all shadow-xl hover:-translate-y-1 mb-12 md:mb-16 w-full sm:w-auto">
+          <a href="#consultation" className="inline-block bg-accent-coral text-primary-navy font-bold text-base md:text-lg px-8 py-4 md:px-10 md:py-5 rounded-full hover:bg-white transition-all shadow-xl hover:-translate-y-1 mb-12 md:mb-16 w-full sm:w-auto">
             BOOK YOUR PRIVATE CONSULTATION
-          </button>
+          </a>
           
           <div className="border-t border-white/10 pt-6 md:pt-8 mt-6 md:mt-8 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-blue-200">
             <div className="mb-4 md:mb-0">© {new Date().getFullYear()} SHakti - Sexual Wellness, Intimacy & Rehabilitation.</div>
