@@ -38,15 +38,14 @@ export default function ShaktiLandingPage() {
           </div>
           
           {/* VSL BLOCK */}
-          <div className="order-2 lg:col-start-2 lg:row-span-2 relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-video bg-gray-900 group border-4 border-white w-full max-w-xl mx-auto lg:max-w-none">
-            {/* VSL Video Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 opacity-60"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-              <PlayCircle className="w-16 h-16 md:w-20 md:h-20 text-white/90 group-hover:scale-110 transition-transform cursor-pointer mb-2 md:mb-4 drop-shadow-md" />
-              <div className="text-white/90 text-center text-sm md:text-base font-medium drop-shadow-md">
-                Click to watch Dr. Dipali explain her approach
-              </div>
-            </div>
+          <div className="order-2 lg:col-start-2 lg:row-span-2 relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-video bg-gray-900 border-4 border-white w-full max-w-xl mx-auto lg:max-w-none">
+            <iframe
+              src="https://fast.wistia.net/embed/iframe/ad519uqga2?seo=false&videoFoam=true"
+              title="Dr. Dipali VSL"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full border-0"
+            ></iframe>
           </div>
           
           {/* CTA BLOCK */}
