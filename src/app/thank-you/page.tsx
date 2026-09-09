@@ -1,10 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { ArrowLeft, Check, ShieldCheck, Heart, Lock, CalendarClock } from 'lucide-react';
 
 export default function ThankYouPage() {
   return (
     <div className="min-h-[100dvh] flex flex-col bg-gradient-to-b from-white to-bg-base overflow-x-hidden selection:bg-teal-700 selection:text-white">
+      {/* Meta Pixel Lead Event */}
+      <Script
+        id="meta-pixel-lead"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `if (typeof window.fbq === 'function') { fbq('track', 'Lead'); }`,
+        }}
+      />
       {/* Navigation */}
       <nav className="w-full bg-white/60 backdrop-blur-md border-b border-gray-100/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
