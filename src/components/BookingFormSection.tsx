@@ -93,11 +93,14 @@ export default function BookingFormSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Store in session storage or state if needed for thank-you page
+    // Store in session storage for local reference
     try {
       sessionStorage.setItem('shakti_lead', JSON.stringify({
         ...formData,
@@ -107,11 +110,23 @@ export default function BookingFormSection() {
       // ignore storage errors
     }
 
-    // Smooth transition to thank-you page
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        console.warn('Google Sheets submission issue:', data.error);
+      }
+    } catch (err) {
+      console.error('Form submission fetch error:', err);
+    } finally {
       setIsSubmitting(false);
       router.push('/thank-you');
-    }, 600);
+    }
   };
 
   return (
