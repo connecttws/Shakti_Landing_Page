@@ -31,7 +31,7 @@ export default function ShaktiLandingPage() {
               Private & Confidential Support
             </div>
             <h1 className="heading-primary text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight md:leading-tight">
-              Working Professionals Facing <br className="hidden lg:block"/> <span className="text-slate-900 font-extrabold">Intimacy Issues?</span>
+              Working Professionals Facing <br className="hidden lg:block"/> Intimacy Issues?
             </h1>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Get Personalised Support for <strong className="text-primary-navy font-bold">Se.x.ual Wellness, Intimacy, Anxiety & Relationship</strong> Concerns
@@ -52,9 +52,9 @@ export default function ShaktiLandingPage() {
           {/* CTA BLOCK */}
           <div className="order-3 lg:col-start-1 lg:row-start-2 self-start">
             <div className="flex flex-col sm:flex-row gap-4 pt-1 justify-center lg:justify-start items-center lg:items-start">
-              <a href="#consultation" className="inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-4.5 bg-accent-coral text-primary-navy font-bold text-base md:text-lg rounded-full hover:bg-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 group w-full sm:w-auto border border-white/20">
-                BOOK YOUR PRIVATE CONSULTATION
-                <PlayCircle className="ml-2.5 w-5 h-5 group-hover:scale-110 transition-transform" />
+              <a href="#consultation" className="btn-primary px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base group w-fit border border-white/20 shadow-md">
+                Book Your Private Consultation
+                <PlayCircle className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3 md:gap-4 text-xs md:text-sm text-slate-600 font-medium pt-4 max-w-xl mx-auto lg:mx-0">
@@ -97,8 +97,8 @@ export default function ShaktiLandingPage() {
           </div>
 
           <div className="mt-12 md:mt-16 text-center">
-            <a href="#consultation" className="btn-primary px-8 py-3.5 md:px-10 md:py-4 text-base md:text-lg w-full sm:w-auto inline-block border border-white/20 shadow-xl hover:shadow-2xl">
-              BOOK YOUR PRIVATE CONSULTANCY
+            <a href="#consultation" className="inline-block bg-accent-coral text-primary-navy font-bold text-base md:text-lg px-8 py-4 md:px-10 md:py-5 rounded-full hover:bg-white transition-all shadow-xl hover:-translate-y-1 w-full sm:w-auto border border-white/20">
+              BOOK YOUR PRIVATE CONSULTATION
             </a>
           </div>
         </div>
