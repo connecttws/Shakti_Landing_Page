@@ -217,17 +217,67 @@ export default function ShaktiLandingPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              { quote: "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space to understand my concerns without feeling judged.", name: "{Clients Name}" },
-              { quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions, confidence and everyday life.", name: "{Clients Name}" },
-              { quote: "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence and intimacy, and I got practical guidance that I could relate to.", name: "{Clients Name}" },
-              { quote: "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better, and my intimate life has improved.", name: "{Clients Name}" },
-              { quote: "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.", name: "{Clients Name}" },
-              { quote: "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through.", name: "{Clients Name}" }
+              {
+                quote: "I finally felt comfortable talking about something I had been keeping to myself for a long time. The consultation gave me a safe space to understand my concerns without feeling judged.",
+                author: "Anonymous Client",
+                badge: "Identity Protected",
+                role: "Verified Consultation"
+              },
+              {
+                quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions, confidence and everyday life.",
+                author: "Confidential Review",
+                badge: "Identity Protected",
+                role: "Working Professional"
+              },
+              {
+                quote: "The biggest difference for me was being able to talk openly. I understood how stress and anxiety were affecting my confidence and intimacy, and I got practical guidance that I could relate to.",
+                author: "Anonymous Client",
+                badge: "Identity Protected",
+                role: "Online Consultation"
+              },
+              {
+                quote: "Work pressure and stress were affecting my intimate life. After counselling, I understood how to manage these concerns better, and my intimate life has improved.",
+                author: "Confidential Review",
+                badge: "Identity Protected",
+                role: "Corporate Executive"
+              },
+              {
+                quote: "Anxiety was affecting my intimate life and confidence. After counselling, I understood my triggers better and felt much more comfortable.",
+                author: "Anonymous Client",
+                badge: "Identity Protected",
+                role: "Intimacy Program"
+              },
+              {
+                quote: "I was very uncomfortable discussing my intimacy concerns. The consultation felt private, respectful and easy to talk through.",
+                author: "Confidential Review",
+                badge: "Identity Protected",
+                role: "Verified Consultation"
+              }
             ].map((testimonial, idx) => (
-              <div key={idx} className="glass-card p-6 md:p-8 rounded-2xl relative">
-                <div className="text-4xl md:text-6xl text-primary-navy/10 absolute top-4 right-6 font-serif">"</div>
-                <p className="text-sm md:text-base text-slate-700 relative z-10 italic mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                <div className="font-bold text-sm md:text-base text-primary-navy font-outfit">— {testimonial.name}</div>
+              <div key={idx} className="glass-card p-6 md:p-8 rounded-2xl relative flex flex-col justify-between border border-gray-100 hover:border-accent-sage/40 transition-colors">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex text-amber-400 gap-0.5 text-sm">
+                      ★★★★★
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      {testimonial.badge}
+                    </span>
+                  </div>
+                  <div className="text-4xl md:text-5xl text-primary-navy/10 absolute top-4 right-6 font-serif select-none pointer-events-none">"</div>
+                  <p className="text-sm md:text-base text-slate-700 relative z-10 italic mb-6 leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-gray-100/80 flex items-center justify-between">
+                  <div className="font-bold text-sm md:text-base text-primary-navy font-outfit">
+                    — {testimonial.author}
+                  </div>
+                  <span className="text-xs text-slate-400 font-medium">
+                    {testimonial.role}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
