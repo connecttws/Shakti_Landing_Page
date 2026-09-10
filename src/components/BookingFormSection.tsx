@@ -43,10 +43,10 @@ export default function BookingFormSection() {
   ];
 
   const helpOptions = [
-    'Sexual Performance Anxiety',
+    'Se.x.ual Performance Anxiety',
     'Premature Ejaculation',
     'Relationship & Communication',
-    'Sexual Rehabilitation',
+    'Se.x.ual Rehabilitation',
     'Disability-related intimacy concerns',
     'Relationship/intimacy concerns',
     'Difficulty reaching orgasm',
@@ -55,7 +55,7 @@ export default function BookingFormSection() {
   ];
 
   const affectedOptions = [
-    'Sexual confidence',
+    'Se.x.ual confidence',
     'Relationship / intimacy',
     'Emotional wellbeing',
     'Self-esteem',

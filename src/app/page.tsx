@@ -77,11 +77,11 @@ export default function ShaktiLandingPage() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="font-outfit text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
-            "I Look Beyond the Se.x.ual Concern — <br className="hidden sm:block"/>
+            "I Look Beyond the <span className="text-accent-coral">Se.x.ual Concern</span> — <br className="hidden sm:block"/>
             <span className="text-accent-coral">I Look at What Affects Your Intimacy"</span>
           </h2>
           <p className="text-base md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-16">
-            Through an Occupational Therapy approach, I help you understand how stress, anxiety, health and everyday life may be affecting your intimacy and sexual well-being. Together, we work on practical strategies to improve confidence, comfort and connection.
+            Through an Occupational Therapy approach, I help you understand how stress, anxiety, health and everyday life may be affecting your intimacy and <strong className="font-semibold text-white">se.x.ual well-being</strong>. Together, we work on practical strategies to improve confidence, comfort and connection.
           </p>
           
           <div className="flex flex-wrap justify-center gap-3 md:gap-8 font-medium text-base md:text-xl text-accent-sage">
@@ -113,8 +113,8 @@ export default function ShaktiLandingPage() {
               <div className="flex w-max animate-marquee gap-3 md:gap-4 hover:[animation-play-state:paused] py-2">
                 {[...Array(2)].map((_, i) => (
                   <React.Fragment key={i}>
-                    {["Performance Anxiety", "Sexual Confidence", "Premature Ejaculation", "Erectile Difficulties", "Vaginismus & Pelvic Pain", "Intimacy & Desire Concerns"].map((concern, idx) => (
-                      <span key={`${i}-${idx}`} className="shrink-0 px-5 py-3 md:px-6 md:py-3 bg-white rounded-full shadow-sm text-primary-navy font-medium border-2 border-gray-200 md:border md:border-gray-100 text-base">
+                    {["Performance Anxiety", "Se.x.ual Confidence", "Premature Ejaculation", "Erectile Difficulties", "Vaginismus & Pelvic Pain", "Intimacy & Desire Concerns"].map((concern, idx) => (
+                      <span key={`${i}-${idx}`} className="shrink-0 px-5 py-3 md:px-6 md:py-3 bg-white rounded-full shadow-sm text-primary-navy font-bold border-2 border-gray-200 md:border md:border-gray-100 text-base">
                         {concern}
                       </span>
                     ))}
@@ -127,20 +127,20 @@ export default function ShaktiLandingPage() {
           <div className="text-center mb-12 max-w-4xl mx-auto">
             <h2 className="heading-primary text-3xl md:text-4xl font-bold mb-6">How We Can Support You</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Sexual wellness is connected to much more than physical intimacy. Your emotions, confidence, relationship, health, stress and everyday life can all play a role.<br className="hidden md:block"/>
-              We help individuals and couples understand these connections and work through concerns related to sexual wellness and intimacy through an Occupational Therapy approach.
+              <strong className="text-primary-navy font-bold">Se.x.ual wellness</strong> is connected to much more than physical intimacy. Your emotions, confidence, relationship, health, stress and everyday life can all play a role.<br className="hidden md:block"/>
+              We help individuals and couples understand these connections and work through concerns related to <strong className="text-primary-navy font-semibold">se.x.ual wellness</strong> and intimacy through an Occupational Therapy approach.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-10">
             {[
-              { icon: <Heart className="text-accent-coral" />, title: "Sexual Wellness Concerns", desc: "Understand your sexual wellness concerns in a private, comfortable and non-judgmental environment." },
+              { icon: <Heart className="text-accent-coral" />, title: "Se.x.ual Wellness Concerns", desc: "Understand your se.x.ual wellness concerns in a private, comfortable and non-judgmental environment." },
               { icon: <MessageCircleHeart className="text-accent-sage" />, title: "Intimacy & Relationship Concerns", desc: "Work through communication difficulties, emotional distance, differences in expectations and challenges in your intimate relationship." },
-              { icon: <Brain className="text-primary-teal" />, title: "Sexual Performance Anxiety", desc: "Understand how anxiety, overthinking, pressure and self-confidence may be affecting your intimate experience." },
-              { icon: <Sparkles className="text-amber-500" />, title: "Body Confidence & Sexual Self-Esteem", desc: "Develop greater awareness, comfort and confidence in your body and intimate self." },
-              { icon: <Activity className="text-rose-500" />, title: "Stress & Anxiety Related to Intimacy", desc: "Explore how everyday stress, work pressure, anxiety and emotional exhaustion may be affecting your sexual well-being." },
-              { icon: <Stethoscope className="text-emerald-500" />, title: "Sexual Rehabilitation", desc: "Get support when illness, injury, surgery or changes in physical functioning have affected your intimacy or sexual well-being." },
-              { icon: <Accessibility className="text-blue-500" />, title: "Sexuality & Disability Support", desc: "Explore sexuality, intimacy and practical strategies based on your individual abilities, needs and circumstances." },
+              { icon: <Brain className="text-primary-teal" />, title: "Se.x.ual Performance Anxiety", desc: "Understand how anxiety, overthinking, pressure and self-confidence may be affecting your intimate experience." },
+              { icon: <Sparkles className="text-amber-500" />, title: "Body Confidence & Se.x.ual Self-Esteem", desc: "Develop greater awareness, comfort and confidence in your body and intimate self." },
+              { icon: <Activity className="text-rose-500" />, title: "Stress & Anxiety Related to Intimacy", desc: "Explore how everyday stress, work pressure, anxiety and emotional exhaustion may be affecting your se.x.ual well-being." },
+              { icon: <Stethoscope className="text-emerald-500" />, title: "Se.x.ual Rehabilitation", desc: "Get support when illness, injury, surgery or changes in physical functioning have affected your intimacy or se.x.ual well-being." },
+              { icon: <Accessibility className="text-blue-500" />, title: "Se.x.uality & Disability Support", desc: "Explore se.x.uality, intimacy and practical strategies based on your individual abilities, needs and circumstances." },
               { icon: <HeartPulse className="text-red-500" />, title: "Chronic Illness & Intimacy", desc: "Understand and adapt to changes in intimacy, confidence, energy and relationships while living with a chronic condition." },
               { icon: <Users className="text-indigo-500" />, title: "Partner Education & Communication", desc: "Help partners understand each other's needs, concerns and experiences to build better communication and connection." },
             ].map((feature, idx) => (
@@ -164,42 +164,50 @@ export default function ShaktiLandingPage() {
 
       {/* About Section */}
       <section className="py-12 md:py-24 bg-white px-4 sm:px-6 lg:px-8 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="aspect-[4/5] bg-gray-100 rounded-2xl md:rounded-3xl overflow-hidden relative shadow-2xl w-full max-w-sm mx-auto lg:max-w-none border-4 border-white">
-              <img
-                src="/dipali.png"
-                alt="Dr. Dipali Ganesh Thakare"
-                className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 via-transparent to-transparent pointer-events-none" />
-            </div>
-            <div className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-xl border border-gray-100 hidden sm:block z-10">
-              <div className="text-2xl md:text-4xl font-bold text-primary-navy mb-1 font-outfit">1000+</div>
-              <div className="text-xs md:text-sm text-slate-500 font-medium">Patients Supported</div>
-            </div>
-          </div>
-          
-          <div className="order-1 lg:order-2">
-            <h2 className="heading-primary text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-center lg:text-left">Meet Dr. Dipali Ganesh Thakare</h2>
-            <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed text-center lg:text-left">
-              Hi, I’m Dr. Dipali Ganesh Thakare, founder of SHakti – Sexual Wellness, Intimacy & Rehabilitation. I help individuals and couples navigate concerns around sexual wellness, intimacy, relationships, body confidence, and sexual rehabilitation — with a practical Occupational Therapy approach.
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header & Bio */}
+          <div className="max-w-3xl mb-8 md:mb-12">
+            <h2 className="heading-primary text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-left">Meet Dr. Dipali Ganesh Thakare</h2>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-left">
+              Hi, I’m Dr. Dipali Ganesh Thakare, founder of SHakti – <strong className="text-primary-navy font-bold">Se.x.ual Wellness</strong>, Intimacy & Rehabilitation. I help individuals and couples navigate concerns around <strong className="text-primary-navy font-bold">se.x.ual wellness</strong>, intimacy, relationships, body confidence, and <strong className="text-primary-navy font-bold">se.x.ual rehabilitation</strong> — with a practical Occupational Therapy approach.
             </p>
-            
-            <h3 className="text-xl md:text-2xl font-bold text-primary-navy mb-4 md:mb-6 font-outfit text-center lg:text-left">Our Outcomes</h3>
-            <ul className="space-y-3 md:space-y-4">
-              {[
-                "Build Sexual Confidence",
-                "Improve Intimate Connection",
-                "Manage Performance Concerns",
-                "Feel More Comfortable With Intimacy"
-              ].map((outcome, idx) => (
-                <li key={idx} className="flex items-center gap-3 md:gap-4 text-base md:text-lg text-slate-700 font-medium bg-bg-base py-3 px-4 md:px-5 rounded-xl">
-                  <CheckCircle2 className="text-accent-sage w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
-                  {outcome}
-                </li>
-              ))}
-            </ul>
+          </div>
+
+          {/* Grid with Image & Outcomes */}
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
+            {/* Dr. Dipali Image */}
+            <div className="relative">
+              <div className="aspect-[4/5] bg-gray-100 rounded-2xl md:rounded-3xl overflow-hidden relative shadow-2xl w-full max-w-sm mx-auto lg:max-w-none border-4 border-white">
+                <img
+                  src="/dipali.png"
+                  alt="Dr. Dipali Ganesh Thakare"
+                  className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-xl border border-gray-100 hidden sm:block z-10">
+                <div className="text-2xl md:text-4xl font-bold text-primary-navy mb-1 font-outfit">1000+</div>
+                <div className="text-xs md:text-sm text-slate-500 font-medium">Patients Supported</div>
+              </div>
+            </div>
+
+            {/* Our Outcomes */}
+            <div className="pt-2 lg:pt-0">
+              <h3 className="text-xl md:text-2xl font-bold text-primary-navy mb-4 md:mb-6 font-outfit text-left">Our Outcomes</h3>
+              <ul className="space-y-3 md:space-y-4">
+                {[
+                  "Build Se.x.ual Confidence",
+                  "Improve Intimate Connection",
+                  "Manage Performance Concerns",
+                  "Feel More Comfortable With Intimacy"
+                ].map((outcome, idx) => (
+                  <li key={idx} className="flex items-center gap-3 md:gap-4 text-base md:text-lg text-slate-700 font-bold bg-bg-base py-3 px-4 md:px-5 rounded-xl">
+                    <CheckCircle2 className="text-accent-sage w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -221,7 +229,7 @@ export default function ShaktiLandingPage() {
                 role: "Verified Consultation"
               },
               {
-                quote: "I appreciated that the conversation was not only about the sexual concern. We also looked at my overall routine, emotions, confidence and everyday life.",
+                quote: "I appreciated that the conversation was not only about the se.x.ual concern. We also looked at my overall routine, emotions, confidence and everyday life.",
                 author: "Confidential Review",
                 badge: "Identity Protected",
                 role: "Working Professional"
@@ -296,10 +304,10 @@ export default function ShaktiLandingPage() {
           <h2 className="heading-primary text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16">Frequently Asked Questions</h2>
           <div className="space-y-3 md:space-y-4">
             {[
-              { q: "What is Sexual Wellness Consultation?", a: "A private consultation to discuss your sexual wellness, intimacy, confidence, relationship or sexuality-related concerns and understand the right support for you." },
-              { q: "What happens in a Sexual & Intimacy Assessment?", a: "We explore how your body, emotions, relationships, health and everyday life may be affecting your intimacy and sexual well-being." },
-              { q: "Can you help with Sexual Performance Anxiety?", a: "Yes. The program focuses on anxiety, overthinking, pressure and confidence concerns that may be affecting your intimate life." },
-              { q: "Do you offer Female Sexual Wellness consultations?", a: "Yes. Women can discuss concerns related to sexual wellness, intimacy, body awareness, confidence and self-esteem." },
+              { q: "What is Se.x.ual Wellness Consultation?", a: "A private consultation to discuss your se.x.ual wellness, intimacy, confidence, relationship or se.x.uality-related concerns and understand the right support for you." },
+              { q: "What happens in a Se.x.ual & Intimacy Assessment?", a: "We explore how your body, emotions, relationships, health and everyday life may be affecting your intimacy and se.x.ual well-being." },
+              { q: "Can you help with Se.x.ual Performance Anxiety?", a: "Yes. The program focuses on anxiety, overthinking, pressure and confidence concerns that may be affecting your intimate life." },
+              { q: "Do you offer Female Se.x.ual Wellness consultations?", a: "Yes. Women can discuss concerns related to se.x.ual wellness, intimacy, body awareness, confidence and self-esteem." },
               { q: "Are consultations available online?", a: "Yes. Dr. Dipali Ganesh Thakare currently offers private online consultations." }
             ].map((faq, idx) => (
               <details key={idx} className="group bg-bg-base rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
@@ -321,14 +329,14 @@ export default function ShaktiLandingPage() {
         <div className="max-w-4xl mx-auto text-white">
           <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Ready to Reclaim Your Confidence?</h2>
           <p className="text-base md:text-xl text-blue-100 mb-8 md:mb-10 max-w-2xl mx-auto">
-            Take the first step towards better intimacy, sexual wellness, and connection today. Private, confidential, and individualised support.
+            Take the first step towards better intimacy, <strong className="font-semibold text-white">se.x.ual wellness</strong>, and connection today. Private, confidential, and individualised support.
           </p>
           <a href="#consultation" className="inline-block bg-accent-coral text-primary-navy font-bold text-base md:text-lg px-8 py-4 md:px-10 md:py-5 rounded-full hover:bg-white transition-all shadow-xl hover:-translate-y-1 mb-12 md:mb-16 w-full sm:w-auto">
             BOOK YOUR PRIVATE CONSULTATION
           </a>
           
           <div className="border-t border-white/10 pt-6 md:pt-8 mt-6 md:mt-8 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-blue-200">
-            <div className="mb-4 md:mb-0">© {new Date().getFullYear()} SHakti - Sexual Wellness, Intimacy & Rehabilitation.</div>
+            <div className="mb-4 md:mb-0">© {new Date().getFullYear()} SHakti – Se.x.ual Wellness, Intimacy & Rehabilitation.</div>
             <div className="flex gap-4 md:gap-6">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

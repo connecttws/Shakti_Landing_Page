@@ -50,7 +50,7 @@ export default function ThankYouPage() {
               Your consultation request has been successfully submitted.
             </p>
             <p className="mt-4 text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              Thank you for taking the first step towards better sexual wellness, intimacy, and confidence. Dr. Dipali’s team will review your details and be in touch shortly.
+              Thank you for taking the first step towards better se.x.ual wellness, intimacy, and confidence. Dr. Dipali’s team will review your details and be in touch shortly.
             </p>
           </div>
           
@@ -95,7 +95,7 @@ export default function ThankYouPage() {
       </main>
 
       <footer className="py-8 text-center text-slate-400 text-xs md:text-sm border-t border-gray-100/50 bg-white/30 backdrop-blur-sm mt-auto">
-        <p>© {new Date().getFullYear()} SHakti – Sexual Wellness, Intimacy & Rehabilitation.</p>
+        <p>© {new Date().getFullYear()} SHakti – Se.x.ual Wellness, Intimacy & Rehabilitation.</p>
       </footer>
     </div>
   );

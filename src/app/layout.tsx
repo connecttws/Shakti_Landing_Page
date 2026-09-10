@@ -14,8 +14,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "SHakti - Sexual Wellness, Intimacy & Rehabilitation",
-  description: "Working Professionals Facing Intimacy Issues? Get Personalised Support for Sexual Wellness, Intimacy, Anxiety & Relationship Concerns with Dr. Dipali Ganesh Thakare.",
+  title: "SHakti - Se.x.ual Wellness, Intimacy & Rehabilitation",
+  description: "Working Professionals Facing Intimacy Issues? Get Personalised Support for Se.x.ual Wellness, Intimacy, Anxiety & Relationship Concerns with Dr. Dipali Ganesh Thakare.",
 };
 
 export default function RootLayout({
