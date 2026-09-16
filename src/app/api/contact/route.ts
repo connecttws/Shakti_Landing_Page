@@ -11,12 +11,16 @@ export async function POST(request: Request) {
       gender,
       occupation,
       occupationOther,
-      helpNeeds,
-      helpNeedsOther,
+      painDiscomfort,
       affectedAreas,
       affectedAreasOther,
-      comfortPreference,
+      desireChanges,
       previousHelp,
+      pregnancyImpact,
+      callTime,
+      // Fallback aliases
+      helpNeeds,
+      comfortPreference,
     } = body;
 
     // ── 1. Validate required fields ───────────────────────────────────────────
@@ -33,15 +37,6 @@ export async function POST(request: Request) {
         ? `Other: ${occupationOther}`
         : occupation || '—';
 
-    let helpNeedsList = Array.isArray(helpNeeds) ? [...helpNeeds] : [];
-    if (helpNeedsList.includes('Other') && helpNeedsOther) {
-      helpNeedsList = helpNeedsList.map((item) =>
-        item === 'Other' ? `Other: ${helpNeedsOther}` : item
-      );
-    }
-    const finalHelpNeeds =
-      helpNeedsList.length > 0 ? helpNeedsList.join(', ') : '—';
-
     let affectedList = Array.isArray(affectedAreas) ? [...affectedAreas] : [];
     if (affectedList.includes('Other') && affectedAreasOther) {
       affectedList = affectedList.map((item) =>
@@ -50,6 +45,13 @@ export async function POST(request: Request) {
     }
     const finalAffectedAreas =
       affectedList.length > 0 ? affectedList.join(', ') : '—';
+
+    const finalPainDiscomfort =
+      painDiscomfort || (Array.isArray(helpNeeds) ? helpNeeds.join(', ') : helpNeeds) || '—';
+    const finalDesireChanges = desireChanges || comfortPreference || '—';
+    const finalPreviousHelp = previousHelp || '—';
+    const finalPregnancyImpact = pregnancyImpact || '—';
+    const finalCallTime = callTime || '—';
 
     const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
     const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
@@ -80,7 +82,7 @@ export async function POST(request: Request) {
     // ── 4. Append a new row to the sheet ──────────────────────────────────────
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Sheet1!A:I',
+      range: 'Sheet1!A:K',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [
@@ -90,10 +92,12 @@ export async function POST(request: Request) {
             phone,
             gender || '—',
             finalOccupation,
-            finalHelpNeeds,
+            finalPainDiscomfort,
             finalAffectedAreas,
-            comfortPreference || '—',
-            previousHelp || '—',
+            finalDesireChanges,
+            finalPreviousHelp,
+            finalPregnancyImpact,
+            finalCallTime,
           ],
         ],
       },

@@ -27,12 +27,13 @@ export default function BookingFormSection() {
     gender: '',
     occupation: '',
     occupationOther: '',
-    helpNeeds: [] as string[],
-    helpNeedsOther: '',
+    painDiscomfort: '',
     affectedAreas: [] as string[],
     affectedAreasOther: '',
-    comfortPreference: '',
+    desireChanges: '',
     previousHelp: '',
+    pregnancyImpact: '',
+    callTime: '',
   });
 
   const occupationOptions = [
@@ -42,16 +43,11 @@ export default function BookingFormSection() {
     'Other'
   ];
 
-  const helpOptions = [
-    'Se.x.ual Performance Anxiety',
-    'Premature Ejaculation',
-    'Relationship & Communication',
-    'Se.x.ual Rehabilitation',
-    'Disability-related intimacy concerns',
-    'Relationship/intimacy concerns',
-    'Difficulty reaching orgasm',
-    'Pain / discomfort / fatigue / weakness / fear of movement during intimacy',
-    'Other'
+  const painDiscomfortOptions = [
+    'Yes, during penetration',
+    'Yes, during or after intercourse',
+    'Sometimes',
+    'No'
   ];
 
   const affectedOptions = [
@@ -63,12 +59,11 @@ export default function BookingFormSection() {
     'Other'
   ];
 
-  const comfortOptions = [
-    'Being given time to explain my concern',
-    'Knowing what questions will be asked',
-    'A structured assessment',
-    'Being able to ask questions freely, education/information, having my partner involved or no?',
-    "I'm not sure yet"
+  const desireChangesOptions = [
+    'Reduced se.x.ual desire',
+    'Difficulty becoming aroused',
+    'Both',
+    'No'
   ];
 
   const previousHelpOptions = [
@@ -77,8 +72,22 @@ export default function BookingFormSection() {
     'Prefer not to say'
   ];
 
+  const pregnancyImpactOptions = [
+    'Yes, after childbirth',
+    'Yes, after pregnancy',
+    'Yes, due to other physical changes',
+    'No'
+  ];
+
+  const callTimeOptions = [
+    'Morning (9 AM – 12 PM)',
+    'Afternoon (12 PM – 3 PM)',
+    'Evening (3 PM – 6 PM)',
+    'Evening (6 PM – 9 PM)'
+  ];
+
   const handleCheckboxToggle = (
-    field: 'helpNeeds' | 'affectedAreas', 
+    field: 'affectedAreas', 
     value: string
   ) => {
     setFormData((prev) => {
@@ -286,7 +295,7 @@ export default function BookingFormSection() {
               </div>
             </div>
 
-            {/* STEP 2: Concerns & Affected Areas */}
+            {/* STEP 2: Concerns & Life Impact */}
             <div className="space-y-6 pt-6 border-t border-gray-100">
               <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
                 <div className="w-8 h-8 rounded-full bg-primary-navy/10 text-primary-navy flex items-center justify-center font-bold text-sm">
@@ -297,49 +306,37 @@ export default function BookingFormSection() {
                 </h3>
               </div>
 
-              {/* 5. What do you need help with? */}
+              {/* 5. Are you experiencing pain or discomfort during se.x.ual intercourse? */}
               <div className="space-y-3 text-left">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <label className="block text-sm font-semibold text-slate-800">
-                    5. What do you need help with? <span className="text-rose-500">*</span>
-                  </label>
-                  <span className="text-xs text-slate-500 font-medium">Select all that apply</span>
-                </div>
+                <label className="block text-sm font-semibold text-slate-800">
+                  5. Are you experiencing pain or discomfort during se.x.ual intercourse? <span className="text-rose-500">*</span>
+                </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {helpOptions.map((option) => {
-                    const isChecked = formData.helpNeeds.includes(option);
+                  {painDiscomfortOptions.map((option) => {
+                    const isSelected = formData.painDiscomfort === option;
                     return (
                       <label
                         key={option}
-                        className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
-                          isChecked
-                            ? 'bg-accent-sage/15 border-accent-sage text-primary-navy font-semibold shadow-sm'
+                        className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          isSelected
+                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
                             : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
                         }`}
                       >
+                        <span className="text-sm">{option}</span>
                         <input
-                          type="checkbox"
-                          checked={isChecked}
-                          onChange={() => handleCheckboxToggle('helpNeeds', option)}
-                          className="w-4 h-4 mt-0.5 rounded text-primary-navy accent-primary-navy"
+                          type="radio"
+                          name="painDiscomfort"
+                          value={option}
+                          required={!formData.painDiscomfort}
+                          checked={isSelected}
+                          onChange={() => setFormData({ ...formData, painDiscomfort: option })}
+                          className="w-4 h-4 text-primary-navy accent-primary-navy"
                         />
-                        <span className="text-sm leading-snug">{option}</span>
                       </label>
                     );
                   })}
                 </div>
-                {formData.helpNeeds.includes('Other') && (
-                  <div className="pt-2">
-                    <input
-                      type="text"
-                      placeholder="Please specify other concern"
-                      value={formData.helpNeedsOther}
-                      onChange={(e) => setFormData({ ...formData, helpNeedsOther: e.target.value })}
-                      required
-                      className="w-full px-4 py-3 bg-slate-50/70 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-navy/20 focus:border-primary-navy transition-all"
-                    />
-                  </div>
-                )}
               </div>
 
               {/* 6. Has this concern affected any of the following? */}
@@ -386,54 +383,54 @@ export default function BookingFormSection() {
                   </div>
                 )}
               </div>
+
+              {/* 7. Are you experiencing any changes in your se.x.ual desire or arousal? */}
+              <div className="space-y-3 text-left pt-3">
+                <label className="block text-sm font-semibold text-slate-800">
+                  7. Are you experiencing any changes in your se.x.ual desire or arousal? <span className="text-rose-500">*</span>
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {desireChangesOptions.map((option) => {
+                    const isSelected = formData.desireChanges === option;
+                    return (
+                      <label
+                        key={option}
+                        className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          isSelected
+                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
+                            : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
+                        }`}
+                      >
+                        <span className="text-sm">{option}</span>
+                        <input
+                          type="radio"
+                          name="desireChanges"
+                          value={option}
+                          required={!formData.desireChanges}
+                          checked={isSelected}
+                          onChange={() => setFormData({ ...formData, desireChanges: option })}
+                          className="w-4 h-4 text-primary-navy accent-primary-navy"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
-            {/* STEP 3: Consultation Comfort & History */}
+            {/* STEP 3: Consultation Preferences & Background */}
             <div className="space-y-6 pt-6 border-t border-gray-100">
               <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
                 <div className="w-8 h-8 rounded-full bg-primary-navy/10 text-primary-navy flex items-center justify-center font-bold text-sm">
                   3
                 </div>
                 <h3 className="font-outfit text-xl font-bold text-primary-navy">
-                  Consultation Preferences
+                  Background & Consultation Preferences
                 </h3>
               </div>
 
-              {/* 7. What would help you feel comfortable during your first consultation? */}
-              <div className="space-y-3 text-left">
-                <label className="block text-sm font-semibold text-slate-800">
-                  7. What would help you feel comfortable during your first consultation? <span className="text-rose-500">*</span>
-                </label>
-                <div className="space-y-2.5">
-                  {comfortOptions.map((comfort) => {
-                    const isSelected = formData.comfortPreference === comfort;
-                    return (
-                      <label
-                        key={comfort}
-                        className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
-                          isSelected
-                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
-                            : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="comfortPreference"
-                          value={comfort}
-                          required={!formData.comfortPreference}
-                          checked={isSelected}
-                          onChange={() => setFormData({ ...formData, comfortPreference: comfort })}
-                          className="w-4 h-4 mt-0.5 text-primary-navy accent-primary-navy"
-                        />
-                        <span className="text-sm leading-snug">{comfort}</span>
-                      </label>
-                    );
-                  })}
-                </div>
-              </div>
-
               {/* 8. Have you previously sought professional help for this concern? */}
-              <div className="space-y-3 text-left pt-3">
+              <div className="space-y-3 text-left">
                 <label className="block text-sm font-semibold text-slate-800">
                   8. Have you previously sought professional help for this concern? <span className="text-rose-500">*</span>
                 </label>
@@ -457,6 +454,72 @@ export default function BookingFormSection() {
                           required={!formData.previousHelp}
                           checked={isSelected}
                           onChange={() => setFormData({ ...formData, previousHelp: option })}
+                          className="w-4 h-4 text-primary-navy accent-primary-navy"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* 9. Have pregnancy, childbirth, postpartum changes, or other physical changes affected your se.x.ual well-being? */}
+              <div className="space-y-3 text-left pt-3">
+                <label className="block text-sm font-semibold text-slate-800">
+                  9. Have pregnancy, childbirth, postpartum changes, or other physical changes affected your se.x.ual well-being? <span className="text-rose-500">*</span>
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {pregnancyImpactOptions.map((option) => {
+                    const isSelected = formData.pregnancyImpact === option;
+                    return (
+                      <label
+                        key={option}
+                        className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          isSelected
+                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
+                            : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
+                        }`}
+                      >
+                        <span className="text-sm">{option}</span>
+                        <input
+                          type="radio"
+                          name="pregnancyImpact"
+                          value={option}
+                          required={!formData.pregnancyImpact}
+                          checked={isSelected}
+                          onChange={() => setFormData({ ...formData, pregnancyImpact: option })}
+                          className="w-4 h-4 text-primary-navy accent-primary-navy"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* 10. What is the best time to call you? */}
+              <div className="space-y-3 text-left pt-3">
+                <label className="block text-sm font-semibold text-slate-800">
+                  10. What is the best time to call you? <span className="text-rose-500">*</span>
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  {callTimeOptions.map((time) => {
+                    const isSelected = formData.callTime === time;
+                    return (
+                      <label
+                        key={time}
+                        className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          isSelected
+                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
+                            : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
+                        }`}
+                      >
+                        <span className="text-sm font-medium">{time}</span>
+                        <input
+                          type="radio"
+                          name="callTime"
+                          value={time}
+                          required={!formData.callTime}
+                          checked={isSelected}
+                          onChange={() => setFormData({ ...formData, callTime: time })}
                           className="w-4 h-4 text-primary-navy accent-primary-navy"
                         />
                       </label>
