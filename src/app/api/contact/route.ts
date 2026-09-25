@@ -11,14 +11,16 @@ export async function POST(request: Request) {
       gender,
       occupation,
       occupationOther,
-      painDiscomfort,
       affectedAreas,
       affectedAreasOther,
-      desireChanges,
+      comfortableDiscussing,
       previousHelp,
-      pregnancyImpact,
+      onlineComfort,
       callTime,
-      // Fallback aliases
+      // Fallback aliases if older forms submit
+      painDiscomfort,
+      pregnancyImpact,
+      desireChanges,
       helpNeeds,
       comfortPreference,
     } = body;
@@ -46,11 +48,10 @@ export async function POST(request: Request) {
     const finalAffectedAreas =
       affectedList.length > 0 ? affectedList.join(', ') : '—';
 
-    const finalPainDiscomfort =
-      painDiscomfort || (Array.isArray(helpNeeds) ? helpNeeds.join(', ') : helpNeeds) || '—';
-    const finalDesireChanges = desireChanges || comfortPreference || '—';
+    const finalComfortableDiscussing =
+      comfortableDiscussing || desireChanges || comfortPreference || '—';
     const finalPreviousHelp = previousHelp || '—';
-    const finalPregnancyImpact = pregnancyImpact || '—';
+    const finalOnlineComfort = onlineComfort || '—';
     const finalCallTime = callTime || '—';
 
     const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
@@ -82,7 +83,7 @@ export async function POST(request: Request) {
     // ── 4. Append a new row to the sheet ──────────────────────────────────────
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Sheet1!A:K',
+      range: 'Sheet1!A:J',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [
@@ -92,11 +93,10 @@ export async function POST(request: Request) {
             phone,
             gender || '—',
             finalOccupation,
-            finalPainDiscomfort,
             finalAffectedAreas,
-            finalDesireChanges,
+            finalComfortableDiscussing,
             finalPreviousHelp,
-            finalPregnancyImpact,
+            finalOnlineComfort,
             finalCallTime,
           ],
         ],

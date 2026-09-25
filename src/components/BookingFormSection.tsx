@@ -27,12 +27,11 @@ export default function BookingFormSection() {
     gender: '',
     occupation: '',
     occupationOther: '',
-    painDiscomfort: '',
     affectedAreas: [] as string[],
     affectedAreasOther: '',
-    desireChanges: '',
+    comfortableDiscussing: '',
     previousHelp: '',
-    pregnancyImpact: '',
+    onlineComfort: '',
     callTime: '',
   });
 
@@ -41,13 +40,6 @@ export default function BookingFormSection() {
     'Homemaker',
     'Business Owner',
     'Other'
-  ];
-
-  const painDiscomfortOptions = [
-    'Yes, during penetration',
-    'Yes, during or after intercourse',
-    'Sometimes',
-    'No'
   ];
 
   const affectedOptions = [
@@ -59,11 +51,11 @@ export default function BookingFormSection() {
     'Other'
   ];
 
-  const desireChangesOptions = [
-    'Reduced se.x.ual desire',
-    'Difficulty becoming aroused',
-    'Both',
-    'No'
+  const comfortableDiscussingOptions = [
+    'Yes, I’m ready to discuss it',
+    'Yes, but I’m a little hesitant',
+    'Not Comfortable',
+    'Not sure yet'
   ];
 
   const previousHelpOptions = [
@@ -72,11 +64,12 @@ export default function BookingFormSection() {
     'Prefer not to say'
   ];
 
-  const pregnancyImpactOptions = [
-    'Yes, after childbirth',
-    'Yes, after pregnancy',
-    'Yes, due to other physical changes',
-    'No'
+  const onlineComfortOptions = [
+    'Yes, I’m comfortable with an online consultation',
+    'Yes, but I would prefer a private setting',
+    'I’m not sure yet',
+    'I would prefer an in-person consultation',
+    'Not Comfortable'
   ];
 
   const callTimeOptions = [
@@ -306,44 +299,11 @@ export default function BookingFormSection() {
                 </h3>
               </div>
 
-              {/* 5. Are you experiencing pain or discomfort during se.x.ual intercourse? */}
+              {/* 5. Has this concern affected any of the following? */}
               <div className="space-y-3 text-left">
-                <label className="block text-sm font-semibold text-slate-800">
-                  5. Are you experiencing pain or discomfort during se.x.ual intercourse? <span className="text-rose-500">*</span>
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {painDiscomfortOptions.map((option) => {
-                    const isSelected = formData.painDiscomfort === option;
-                    return (
-                      <label
-                        key={option}
-                        className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
-                          isSelected
-                            ? 'bg-primary-navy/5 border-primary-navy text-primary-navy font-semibold shadow-sm'
-                            : 'bg-slate-50/50 border-slate-200 text-slate-700 hover:bg-slate-100/70'
-                        }`}
-                      >
-                        <span className="text-sm">{option}</span>
-                        <input
-                          type="radio"
-                          name="painDiscomfort"
-                          value={option}
-                          required={!formData.painDiscomfort}
-                          checked={isSelected}
-                          onChange={() => setFormData({ ...formData, painDiscomfort: option })}
-                          className="w-4 h-4 text-primary-navy accent-primary-navy"
-                        />
-                      </label>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* 6. Has this concern affected any of the following? */}
-              <div className="space-y-3 text-left pt-3">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <label className="block text-sm font-semibold text-slate-800">
-                    6. Has this concern affected any of the following? <span className="text-rose-500">*</span>
+                    5. Has this concern affected any of the following? <span className="text-rose-500">*</span>
                   </label>
                   <span className="text-xs text-slate-500 font-medium">Select all that apply</span>
                 </div>
@@ -384,14 +344,14 @@ export default function BookingFormSection() {
                 )}
               </div>
 
-              {/* 7. Are you experiencing any changes in your se.x.ual desire or arousal? */}
+              {/* 6. Would you be comfortable discussing this concern privately with a professional? */}
               <div className="space-y-3 text-left pt-3">
                 <label className="block text-sm font-semibold text-slate-800">
-                  7. Are you experiencing any changes in your se.x.ual desire or arousal? <span className="text-rose-500">*</span>
+                  6. Would you be comfortable discussing this concern privately with a professional? <span className="text-rose-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {desireChangesOptions.map((option) => {
-                    const isSelected = formData.desireChanges === option;
+                  {comfortableDiscussingOptions.map((option) => {
+                    const isSelected = formData.comfortableDiscussing === option;
                     return (
                       <label
                         key={option}
@@ -404,11 +364,11 @@ export default function BookingFormSection() {
                         <span className="text-sm">{option}</span>
                         <input
                           type="radio"
-                          name="desireChanges"
+                          name="comfortableDiscussing"
                           value={option}
-                          required={!formData.desireChanges}
+                          required={!formData.comfortableDiscussing}
                           checked={isSelected}
-                          onChange={() => setFormData({ ...formData, desireChanges: option })}
+                          onChange={() => setFormData({ ...formData, comfortableDiscussing: option })}
                           className="w-4 h-4 text-primary-navy accent-primary-navy"
                         />
                       </label>
@@ -429,10 +389,10 @@ export default function BookingFormSection() {
                 </h3>
               </div>
 
-              {/* 8. Have you previously sought professional help for this concern? */}
+              {/* 7. Have you previously sought professional help for this concern? */}
               <div className="space-y-3 text-left">
                 <label className="block text-sm font-semibold text-slate-800">
-                  8. Have you previously sought professional help for this concern? <span className="text-rose-500">*</span>
+                  7. Have you previously sought professional help for this concern? <span className="text-rose-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {previousHelpOptions.map((option) => {
@@ -462,14 +422,14 @@ export default function BookingFormSection() {
                 </div>
               </div>
 
-              {/* 9. Have pregnancy, childbirth, postpartum changes, or other physical changes affected your se.x.ual well-being? */}
+              {/* 8. Are you comfortable attending a private consultation online? */}
               <div className="space-y-3 text-left pt-3">
                 <label className="block text-sm font-semibold text-slate-800">
-                  9. Have pregnancy, childbirth, postpartum changes, or other physical changes affected your se.x.ual well-being? <span className="text-rose-500">*</span>
+                  8. Are you comfortable attending a private consultation online? <span className="text-rose-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {pregnancyImpactOptions.map((option) => {
-                    const isSelected = formData.pregnancyImpact === option;
+                  {onlineComfortOptions.map((option) => {
+                    const isSelected = formData.onlineComfort === option;
                     return (
                       <label
                         key={option}
@@ -482,11 +442,11 @@ export default function BookingFormSection() {
                         <span className="text-sm">{option}</span>
                         <input
                           type="radio"
-                          name="pregnancyImpact"
+                          name="onlineComfort"
                           value={option}
-                          required={!formData.pregnancyImpact}
+                          required={!formData.onlineComfort}
                           checked={isSelected}
-                          onChange={() => setFormData({ ...formData, pregnancyImpact: option })}
+                          onChange={() => setFormData({ ...formData, onlineComfort: option })}
                           className="w-4 h-4 text-primary-navy accent-primary-navy"
                         />
                       </label>
@@ -495,10 +455,10 @@ export default function BookingFormSection() {
                 </div>
               </div>
 
-              {/* 10. What is the best time to call you? */}
+              {/* 9. What is the best time to call you? */}
               <div className="space-y-3 text-left pt-3">
                 <label className="block text-sm font-semibold text-slate-800">
-                  10. What is the best time to call you? <span className="text-rose-500">*</span>
+                  9. What is the best time to call you? <span className="text-rose-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {callTimeOptions.map((time) => {
