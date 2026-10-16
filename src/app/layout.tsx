@@ -60,6 +60,13 @@ export default function RootLayout({
         {/* End Meta Pixel Code */}
       </head>
       <body className="min-h-[100dvh] flex flex-col font-sans text-slate-800 bg-[#FAFAF8] selection:bg-teal-700 selection:text-white overflow-x-hidden">
+        {/* BooClient CRM Lead Tracker */}
+        <Script
+          src="/crm-lead-tracker.js"
+          data-crm-key="bcl_pub_booclient-team_shakti-wellness-script-30e296"
+          data-api-url="https://clientcrmsystem.vercel.app/api/public/leads"
+          strategy="afterInteractive"
+        />
         {children}
       </body>
     </html>

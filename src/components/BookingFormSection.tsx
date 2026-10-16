@@ -97,10 +97,19 @@ export default function BookingFormSection() {
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMessage(null);
+
+    // Ensure client CRM tracker captures lead with answers and attribution
+    try {
+      if (typeof window !== 'undefined' && (window as any).bclSubmitForm) {
+        (window as any).bclSubmitForm(e.currentTarget);
+      }
+    } catch {
+      // ignore tracker exceptions
+    }
 
     // Store in session storage for local reference
     try {
@@ -230,6 +239,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="gender"
+                          data-question="Gender"
+                          data-field-key="gender"
                           value={gender}
                           required={!formData.gender}
                           checked={isSelected}
@@ -263,6 +274,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="occupation"
+                          data-question="Occupation"
+                          data-field-key="occupation"
                           value={occ}
                           required={!formData.occupation}
                           checked={isSelected}
@@ -277,6 +290,9 @@ export default function BookingFormSection() {
                   <div className="pt-2">
                     <input
                       type="text"
+                      name="occupationOther"
+                      data-question="Occupation (Specified)"
+                      data-field-key="occupation_other"
                       placeholder="Please specify your occupation"
                       value={formData.occupationOther}
                       onChange={(e) => setFormData({ ...formData, occupationOther: e.target.value })}
@@ -321,6 +337,10 @@ export default function BookingFormSection() {
                       >
                         <input
                           type="checkbox"
+                          name="affectedAreas"
+                          data-question="Has this concern affected any of the following?"
+                          data-field-key="affected_areas"
+                          value={area}
                           checked={isChecked}
                           onChange={() => handleCheckboxToggle('affectedAreas', area)}
                           className="w-4 h-4 mt-0.5 rounded text-primary-navy accent-primary-navy"
@@ -334,6 +354,9 @@ export default function BookingFormSection() {
                   <div className="pt-2">
                     <input
                       type="text"
+                      name="affectedAreasOther"
+                      data-question="Affected Areas (Specified)"
+                      data-field-key="affected_areas_other"
                       placeholder="Please specify other affected area"
                       value={formData.affectedAreasOther}
                       onChange={(e) => setFormData({ ...formData, affectedAreasOther: e.target.value })}
@@ -365,6 +388,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="comfortableDiscussing"
+                          data-question="Would you be comfortable discussing this concern privately with a professional?"
+                          data-field-key="comfortable_discussing"
                           value={option}
                           required={!formData.comfortableDiscussing}
                           checked={isSelected}
@@ -410,6 +435,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="previousHelp"
+                          data-question="Have you previously sought professional help for this concern?"
+                          data-field-key="previous_help"
                           value={option}
                           required={!formData.previousHelp}
                           checked={isSelected}
@@ -443,6 +470,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="onlineComfort"
+                          data-question="Are you comfortable attending a private consultation online?"
+                          data-field-key="online_comfort"
                           value={option}
                           required={!formData.onlineComfort}
                           checked={isSelected}
@@ -476,6 +505,8 @@ export default function BookingFormSection() {
                         <input
                           type="radio"
                           name="callTime"
+                          data-question="What is the best time to call you?"
+                          data-field-key="call_time"
                           value={time}
                           required={!formData.callTime}
                           checked={isSelected}
